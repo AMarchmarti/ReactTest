@@ -4,7 +4,7 @@ import Form from '../../components/Form/Form';
 import Header from '../../components/Header/Header';
 import Input from '../../components/Input/Input';
 
-const Hotel = () => {
+const Register = () => {
 	const initialValues = { name: '', lastName: '', email: '', type: 'hotel' };
 	return (
 		<>
@@ -44,4 +44,4 @@ const Hotel = () => {
 	);
 };
 
-export default Hotel;
+export default Register;

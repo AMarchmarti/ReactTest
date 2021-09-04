@@ -1,8 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
-import Agency from '../pages/Agency/Agency';
 import Home from '../pages/Home/Home';
-import Hotel from '../pages/Hotel/Hotel';
+import Register from '../pages/Register/Register';
 
 export const App = () => {
 	return (
@@ -11,11 +10,8 @@ export const App = () => {
 				<Route exact path="/">
 					<Home />
 				</Route>
-				<Route exact path="/hotel">
-					<Hotel />
-				</Route>
-				<Route exact path="/agency">
-					<Agency />
+				<Route exact path="/:typeUser">
+					<Register />
 				</Route>
 			</Switch>
 		</>
