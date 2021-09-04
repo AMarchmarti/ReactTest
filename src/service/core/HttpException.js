@@ -9,7 +9,7 @@ class HttpException extends Error {
 		return this.code;
 	}
 
-	get description(){
+	get description() {
 		return this.description;
 	}
 }

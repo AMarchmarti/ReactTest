@@ -1,40 +1,40 @@
 {
-  "typeusers": [
-    {
-      "id": 1,
-      "name": "hotelGuests",
-      "code": "hotel",
-      "labelName": "Name (required)",
-      "placeholderName": "Enter your Name",
-      "labelLastName": "Last Name (required)",
-      "placeholderLastName": "Enter your last name",
-      "labelEmail": "Email (required)",
-      "placeholderEmail": "Enter your email",
-      "initialGuest": {
-        "name": "",
-        "lastName": "",
-        "email": ""
-      }
-    },
-    {
-      "id": 2,
-      "name": "agencyTravel",
-      "code": "agency",
-      "labelCompanyName": "Company Name (required)",
-      "placeholderName": "Enter your company name",
-      "labelAgencyCode": "Agency Id Code (required)",
-      "placeholderLastName": "Enter your Agency Id Code",
-      "labelEmail": "Email (required)",
-      "placeholderEmail": "Enter your email",
-      "initialAgency": {
-        "companyName": "",
-        "agencyCode": "",
-        "email": ""
-      }
-    },
-    {
-      "id": 3
-    }
-  ],
-  "users": []
+	"typeusers": [
+		{
+			"id": 1,
+			"name": "hotelGuests",
+			"code": "hotel",
+			"labelName": "Name (required)",
+			"placeholderName": "Enter your Name",
+			"labelLastName": "Last Name (required)",
+			"placeholderLastName": "Enter your last name",
+			"labelEmail": "Email (required)",
+			"placeholderEmail": "Enter your email",
+			"initialGuest": {
+				"name": "",
+				"lastName": "",
+				"email": ""
+			}
+		},
+		{
+			"id": 2,
+			"name": "agencyTravel",
+			"code": "agency",
+			"labelCompanyName": "Company Name (required)",
+			"placeholderName": "Enter your company name",
+			"labelAgencyCode": "Agency Id Code (required)",
+			"placeholderLastName": "Enter your Agency Id Code",
+			"labelEmail": "Email (required)",
+			"placeholderEmail": "Enter your email",
+			"initialAgency": {
+				"companyName": "",
+				"agencyCode": "",
+				"email": ""
+			}
+		},
+		{
+			"id": 3
+		}
+	],
+	"users": []
 }
