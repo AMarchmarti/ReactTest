@@ -1,12 +1,12 @@
 [
-    {
-        "id": 1,
-        "name": "hotelGuests",
-        "code": "hotel"
-    },
-    {
-        "id": 2,
-        "name": "agencyTravel",
-        "code": "agency"
-    }
+	{
+		"id": 1,
+		"name": "hotelGuests",
+		"code": "hotel"
+	},
+	{
+		"id": 2,
+		"name": "agencyTravel",
+		"code": "agency"
+	}
 ]
