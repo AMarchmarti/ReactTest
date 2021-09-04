@@ -14,7 +14,7 @@ const Home = () => {
 			<Button type="button" handleClick={() => console.log('Hello2!')} label="Pulsa aqui2" />
 			<Button handleClick={() => console.log('Hello2!')} icon="bi bi-arrow-left" />
 			<Button handleClick={() => console.log('Hello2!')} icon="bi bi-x" />
-            <Input label='Introducir texto' type="text" placeholder="Escribe aqui"/>
+			<Input label="Introducir texto" type="text" placeholder="Escribe aqui" />
 			<Link url="/" label="Are you registered" />
 		</>
 	);
