@@ -13,10 +13,7 @@ const Home = () => {
 			</h3>
 			<p>What kinf of user are you?</p>
 			<Button type="button" handleClick={() => history.push('/hotel')} label="Pulsa aqui" />
-			<Button type="button" handleClick={() => console.log('Hello2!')} label="Pulsa aqui2" />
-			<Button handleClick={() => console.log('Hello2!')} icon="bi bi-arrow-left" />
-			<Button handleClick={() => console.log('Hello2!')} icon="bi bi-x" />
-			<Input label="Introducir texto" type="text" placeholder="Escribe aqui" />
+			<Button type="button" handleClick={() => history.push('/agency')} label="Pulsa aqui2" />
 			<Link url="/" label="Are you registered" />
 		</>
 	);

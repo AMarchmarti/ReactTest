@@ -19,7 +19,7 @@ const createResponse = async (response) => {
 	return ResponseStatus.NO_CONTENT === responseStatus ? await response.text() : await response.json();
 };
 
-const fetch = (path, body, method, extraHeaders = {}) =>
+const fetch = (path, body, method) =>
 	new Promise((resolve, reject) => {
 		const sendInformation = body
 			? {
@@ -31,7 +31,6 @@ const fetch = (path, body, method, extraHeaders = {}) =>
 			.fetch(path, {
 				headers: {
 					...headers,
-					...extraHeaders,
 				},
 				...sendInformation,
 			})
