@@ -8,7 +8,6 @@ const devConfig = {
   mode: "development",
   devServer: {
     port: 3000,
-    contentBase: "../dist",
     open: "chrome",
     hot: true,
   },
