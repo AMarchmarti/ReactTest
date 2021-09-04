@@ -25,7 +25,7 @@ const Register = () => {
 
 	const handleClickSubmit = async (user) => {
 		try {
-			await addUser({ ...user, type: TYPEUSER[params.typeUser] });
+			await addUser({ ...user, typeId: TYPEUSER[params.typeUser] });
 			history.push('/');
 		} catch (e) {
 			console.log('e :>> ', e);
