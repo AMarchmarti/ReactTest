@@ -1,14 +1,14 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:200,400,700");
+@import url('https://fonts.googleapis.com/css?family=Roboto:200,400,700');
 body {
-    font-size: 16px;
-    margin: 0;
-    font-family: Roboto, system-ui, sans-serif;
+	font-size: 16px;
+	margin: 0;
+	font-family: Roboto, system-ui, sans-serif;
 }
-@import "./constants";
-@import "./grid/variables";
-@import "./grid/mixins";
-@import "./grid/grid";
-@import "./components/input";
-@import "./components/header";
-@import "./components/iconButton";
-@import "./components/button";
+@import './constants';
+@import './grid/variables';
+@import './grid/mixins';
+@import './grid/grid';
+@import './components/input';
+@import './components/header';
+@import './components/iconButton';
+@import './components/button';
