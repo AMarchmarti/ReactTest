@@ -3,7 +3,7 @@ import Grid from '../Grid/Grid';
 
 const Title = ({ title }) => {
 	return (
-		<Grid lg="lg" sizeLg={12} direction="column">
+		<Grid size="lg" number={12} direction="column">
 			<h3>{title}</h3>
 		</Grid>
 	);

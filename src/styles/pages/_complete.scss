@@ -1,16 +1,42 @@
 .icon__button__complete {
-    text-align: end;
     background-color: $primary;
+    color: $white;
+}
+
+.container__icon__button__complete {
+    text-align: end;
+    padding: 0 $padding-xs $padding-xs 0;
+    padding-top: $padding-xs;
+}
+
+.container__complete {
+    margin-top: $margin-xl * 5;
+}
+
+.container__complete__title {
+    padding: 0;
+    color: $white;
+}
+
+.container__button__complete {
+    display: flex;
+    justify-content: center;
+    margin-top: $margin-xl;
 }
 
 .complete__description {
     text-align: left;
+    border-radius: 0 0 0.5em 0.5em;
     color: $text-primary;
     margin-bottom: $margin-xl;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    padding-top: $padding-lg;
 }
 .complete__header {
     background-color: $primary;
+    padding: 0;
     border-radius: 0.5em 0.5em 0em 0em;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25), 0 -10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .complete__check {
@@ -19,27 +45,24 @@
     position: absolute;
     background: $primary-light;
     border-radius: 100%;
+    top: 29%;
+
     .complete__check__icon {
         color: $secondary;
     }
     @media (max-width: #{$screen-mobile}) {
-        top: 15%;
         left: 40%;
     }
     @media (max-width: #{$screen-tablet}) and (min-width: #{$screen-mobile}) {
-        top: 15%;
         left: 43%;
     }
     @media (max-width: #{$screen-laptop}) and (min-width: #{$screen-tablet}) {
-        top: 15%;
         left: 45%;
     }
     @media (max-width: #{$screen-desktop}) and (min-width: #{$screen-laptop}) {
-        top: 15%;
         left: 47%;
     }
     @media (min-width: #{$screen-desktop}) {
-        top: 15%;
         left: 48%;
     }
 }

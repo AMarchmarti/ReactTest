@@ -1,17 +1,15 @@
 import React from 'react';
+const SIZE_TYPE = {
+	xs: 'col-xs',
+	sm: 'col-sm',
+	md: 'col-md',
+	lg: 'col-lg',
+};
 
-const Grid = ({ children, xs, lg, md, sm, sizeXs, sizeSm, sizeMd, sizeLg, className, direction }) => {
-	return (
-		<div
-			className={`col-${xs}-${sizeXs} 
-			col-${sm}-${sizeSm} 
-			col-${md}-${sizeMd} 
-			col-${lg}-${sizeLg} 
-			${direction} ${className}`}
-		>
-			{children}
-		</div>
-	);
+const Grid = ({ children, size, number, className, direction }) => {
+	const getSize = size ? `${SIZE_TYPE[size]}-${number} ` : '';
+	const getDirection = direction ? direction : '';
+	return <div className={`${getSize} ${getDirection} ${className}`}>{children}</div>;
 };
 
 export default Grid;

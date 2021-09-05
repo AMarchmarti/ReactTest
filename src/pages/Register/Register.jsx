@@ -41,7 +41,7 @@ const Register = () => {
 			{type && (
 				<>
 					<Header />
-					<Grid lg="lg" sizeLg={12} direction="column" className="container">
+					<Grid size="lg" number={12} direction="column" className="container">
 						<Title title={type.name} />
 						<Form initialValues={basicForm}>
 							{({ values, setValue }) => {
