@@ -1,5 +1,6 @@
 //Colors
 $primary: #69a9fc;
+$primary-light: #e6f1fe;
 $secondary: #0450b4;
 $danger: #d32f2f;
 $warning: #fdd835;
@@ -25,3 +26,10 @@ $margin-xs: 0.25em;
 $margin-sm: 0.5em;
 $margin-md: 1em;
 $margin-lg: 1.5em;
+$margin-xl: 2em;
+
+//Responsive
+$screen-mobile: 360px;
+$screen-tablet: 640px;
+$screen-laptop: 1024px;
+$screen-desktop: 1280px;

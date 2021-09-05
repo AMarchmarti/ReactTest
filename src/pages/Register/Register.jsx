@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import Grid from '../../components/Grid/Grid';
@@ -9,6 +9,7 @@ import Title from '../../components/Title/Title';
 import { getTypeUsers } from '../../service/typeusers.service';
 import { addUser } from '../../service/user.service';
 import { TYPEUSER } from '../../utils/TypeUsers';
+import useGet from '../../hooks/useGet';
 
 const basicForm = {
 	name: '',
@@ -20,10 +21,7 @@ const basicForm = {
 const Register = () => {
 	const params = useParams();
 	const history = useHistory();
-	const [type, setType] = useState();
-	const fetch = async () => {
-		setType(await getTypeUsers(TYPEUSER[params.typeUser]));
-	};
+	const type = useGet(getTypeUsers, TYPEUSER[params.typeUser]);
 
 	const isDisabled = (values) => {
 		const prueba = Object.keys(values).some((key) => !!values[key]);
@@ -33,16 +31,11 @@ const Register = () => {
 	const handleClickSubmit = async (user) => {
 		try {
 			await addUser({ ...user, typeId: TYPEUSER[params.typeUser] });
-			history.push('/');
+			history.push('/complete');
 		} catch (e) {
 			console.log('e :>> ', e);
 		}
 	};
-	useEffect(() => {
-		if (type === undefined) {
-			fetch();
-		}
-	}, [params]);
 	return (
 		<>
 			{type && (

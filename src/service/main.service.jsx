@@ -11,3 +11,15 @@ export const getMainData = async () => {
 
 	return data;
 };
+
+export const getInformationCompleteData = async () => {
+	let information;
+	try {
+		const response = await get('http://localhost:3001/information');
+		information = response;
+	} catch (e) {
+		console.log('e :>> ', e);
+	}
+
+	return information;
+};

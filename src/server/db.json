@@ -23,9 +23,7 @@
       "placeholderEmail": "Enter your email"
     }
   ],
-  "users": [
-
-  ],
+  "users": [],
   "main": {
     "title": "Sign Up",
     "typeText": "What kind of user are you?",
@@ -36,5 +34,10 @@
       "agency": "agency"
     },
     "linkRegister": "Are you registered?"
+  },
+  "information": {
+    "title": "Thank you!",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis iaculis tortor. Praesent pellentesque non justo sollicitudin luctus. Phasellus ornare enim mattis erat convallis vehicula. Sed facilisis, nunc volutpat tempus iaculis, velit metus porttitor justo, at euismod eros magna id leo. Etiam eget velit vitae odio congue rutrum. Quisque pharetra erat lorem, sagittis pellentesque tellus commodo et. Suspendisse ultricies efficitur purus, vel pretium libero vehicula in. Nunc non risus libero.",
+    "btn": "Continue"
   }
 }

@@ -1,0 +1,45 @@
+.icon__button__complete {
+    text-align: end;
+    background-color: $primary;
+}
+
+.complete__description {
+    text-align: left;
+    color: $text-primary;
+    margin-bottom: $margin-xl;
+}
+.complete__header {
+    background-color: $primary;
+    border-radius: 0.5em 0.5em 0em 0em;
+}
+
+.complete__check {
+    z-index: 1;
+    width: 4.25em;
+    position: absolute;
+    background: $primary-light;
+    border-radius: 100%;
+    .complete__check__icon {
+        color: $secondary;
+    }
+    @media (max-width: #{$screen-mobile}) {
+        top: 15%;
+        left: 40%;
+    }
+    @media (max-width: #{$screen-tablet}) and (min-width: #{$screen-mobile}) {
+        top: 15%;
+        left: 43%;
+    }
+    @media (max-width: #{$screen-laptop}) and (min-width: #{$screen-tablet}) {
+        top: 15%;
+        left: 45%;
+    }
+    @media (max-width: #{$screen-desktop}) and (min-width: #{$screen-laptop}) {
+        top: 15%;
+        left: 47%;
+    }
+    @media (min-width: #{$screen-desktop}) {
+        top: 15%;
+        left: 48%;
+    }
+}
