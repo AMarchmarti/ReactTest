@@ -1,8 +1,9 @@
 .button {
     border: solid 1px $secondary;
-    width: 90%;
+    width: 95%;
     padding: 1.5em 0;
     border-radius: 0.5em;
+    font-size: $font-md;
 }
 
 .button__contained {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import Button from '../../components/Button/Button';
-import Container from '../../components/Container/Container';
+import Grid from '../../components/Grid/Grid';
 import Form from '../../components/Form/Form';
 import Header from '../../components/Header/Header';
 import Input from '../../components/Input/Input';
@@ -48,7 +48,7 @@ const Register = () => {
 			{type && (
 				<>
 					<Header />
-					<Container>
+					<Grid lg="lg" sizeLg={12} direction="column" className="container">
 						<Title title={type.name} />
 						<Form initialValues={basicForm}>
 							{({ values, setValue }) => {
@@ -77,6 +77,7 @@ const Register = () => {
 											type="mail"
 											handleBlur={(e) => setValue('email', e.target.value)}
 										/>
+										<Grid className="margin__md__top"></Grid>
 										<Button
 											type="submit"
 											variant={!isDisabled(values) ? 'disabled' : 'contained'}
@@ -88,7 +89,7 @@ const Register = () => {
 								);
 							}}
 						</Form>
-					</Container>
+					</Grid>
 				</>
 			)}
 		</>

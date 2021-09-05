@@ -4,7 +4,9 @@ body {
 	margin: 0;
 	font-family: Roboto, system-ui, sans-serif;
 }
+
 @import "./constants";
+@import "./margin";
 @import "./grid/variables";
 @import "./grid/mixins";
 @import "./grid/grid";
@@ -13,3 +15,4 @@ body {
 @import "./components/iconButton";
 @import "./components/button";
 @import "./components/container";
+@import "./pages/home";

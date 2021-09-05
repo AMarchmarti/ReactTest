@@ -1,11 +1,11 @@
 import React from 'react';
-import Container from '../Container/Container';
+import Grid from '../Grid/Grid';
 
 const Title = ({ title }) => {
 	return (
-		<Container>
+		<Grid lg="lg" sizeLg={12} direction="column">
 			<h3>{title}</h3>
-		</Container>
+		</Grid>
 	);
 };
 
