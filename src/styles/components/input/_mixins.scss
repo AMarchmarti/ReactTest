@@ -8,8 +8,6 @@
     // Label styl
     $label-color: $text-primary,
     $label-displacement: -4px,
-    // Padding for the left and right sides of the input box
-    $horizontal-padding: 0,
     // The speed of the transition
     $speed: 75ms,
     $timing-function: ease-in-out,
@@ -48,13 +46,13 @@
     // Focus ring
     &:focus-within::before {
         border-color: $text;
-        transition: border-color ($speed / 4) linear;
+        transition: border-color $speed linear;
     }
 
     > #{$label} {
         position: absolute;
         top: 0;
-        left: $border-size + $horizontal-padding / 2;
+        left: $border-size;
         transition: color $speed linear, background $speed $timing-function, line-height $speed $timing-function,
             font-size $speed $timing-function;
         background: transparent;
@@ -66,7 +64,7 @@
     // Input reset
     > #{$input} {
         margin: 0;
-        padding: 0 $horizontal-padding;
+        padding: 0;
         border: 0;
         background: transparent;
         min-height: $height;
@@ -116,7 +114,7 @@
     > #{$label} {
         line-height: $border-size;
         height: auto;
-        padding: 0 ($horizontal-padding / 2);
+        padding: 0;
         font-size: $font-size-small;
         color: $text;
         // We need to have a fixed background
