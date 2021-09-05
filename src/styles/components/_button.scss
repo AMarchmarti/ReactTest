@@ -1,15 +1,21 @@
 .button {
-	border: solid 1px $secondary;
-	width: 80%;
-	padding: 1.5em 0;
-	border-radius: 0.5em;
+    border: solid 1px $secondary;
+    width: 90%;
+    padding: 1.5em 0;
+    border-radius: 0.5em;
 }
 
 .button__contained {
-	background-color: $secondary;
-	color: $white;
+    background-color: $secondary;
+    color: $white;
 }
 .button__outlined {
-	background-color: $white;
-	color: $secondary;
+    background-color: $white;
+    color: $secondary;
+}
+
+.button__disabled {
+    border: solid 1px $light-gray;
+    background-color: $light-gray;
+    color: $dark-gray;
 }

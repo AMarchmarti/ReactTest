@@ -1,39 +1,40 @@
 {
-	"typeusers": [
-		{
-			"id": 1,
-			"name": "hotelGuests",
-			"code": "hotel",
-			"labelName": "Name (required)",
-			"placeholderName": "Enter your Name",
-			"labelLastName": "Last Name (required)",
-			"placeholderLastName": "Enter your last name",
-			"labelEmail": "Email (required)",
-			"placeholderEmail": "Enter your email"
-		},
-		{
-			"id": 2,
-			"name": "agencyTravel",
-			"code": "agency",
-			"labelName": "Company Name (required)",
-			"placeholderName": "Enter your company name",
-			"labelLastName": "Agency Id Code (required)",
-			"placeholderLastName": "Enter your Agency Id Code",
-			"labelEmail": "Email (required)",
-			"placeholderEmail": "Enter your email"
-		}
-	],
-	"users": [
-	],
-	"main": {
-		"title": "Sign Up",
-		"typeText": "What kind of user are you?",
-		"hotelGuestButton": "A hotel Guest",
-		"agencyTraveButton": "A travel agency",
-		"type": {
-			"hotel": "hotel",
-			"agency": "agency"
-		},
-		"linkRegister": "Are you registered?"
-	}
+  "typeusers": [
+    {
+      "id": 1,
+      "name": "Hotel Guest",
+      "code": "hotel",
+      "labelName": "Name (required)",
+      "placeholderName": "Enter your Name",
+      "labelLastName": "Last Name (required)",
+      "placeholderLastName": "Enter your last name",
+      "labelEmail": "Email (required)",
+      "placeholderEmail": "Enter your email"
+    },
+    {
+      "id": 2,
+      "name": "Travel Agency",
+      "code": "agency",
+      "labelName": "Company Name (required)",
+      "placeholderName": "Enter your company name",
+      "labelLastName": "Agency Id Code (required)",
+      "placeholderLastName": "Enter your Agency Id Code",
+      "labelEmail": "Email (required)",
+      "placeholderEmail": "Enter your email"
+    }
+  ],
+  "users": [
+
+  ],
+  "main": {
+    "title": "Sign Up",
+    "typeText": "What kind of user are you?",
+    "hotelGuestButton": "A hotel Guest",
+    "agencyTraveButton": "A travel agency",
+    "type": {
+      "hotel": "hotel",
+      "agency": "agency"
+    },
+    "linkRegister": "Are you registered?"
+  }
 }

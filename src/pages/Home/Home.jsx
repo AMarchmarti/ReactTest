@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import Button from '../../components/Button/Button';
+import Container from '../../components/Container/Container';
 import Link from '../../components/Link/Link';
+import Title from '../../components/Title/Title';
 import { getMainData } from '../../service/main.service';
 
 const Home = () => {
@@ -18,10 +20,8 @@ const Home = () => {
 	return (
 		<>
 			{data && (
-				<>
-					<h3>
-						<b>{data.title}</b>
-					</h3>
+				<Container>
+					<Title title={data.title} />
 					<p>{data.typeText}</p>
 					<Button
 						type="button"
@@ -36,7 +36,7 @@ const Home = () => {
 						label={data.agencyTraveButton}
 					/>
 					<Link url="/" label={data.linkRegister} />
-				</>
+				</Container>
 			)}
 		</>
 	);

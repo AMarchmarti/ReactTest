@@ -1,10 +1,9 @@
-$input: '.input';
-$label: '.label';
+$input: ".input";
+$label: ".label";
 $height: 40px;
 $border-size: 2px;
 $border-color: rgba($text, 0.3);
 // Label styl
-$label-color: $text-primary;
 $label-displacement: -4px;
 // The speed of the transition
 $speed: 75ms;
@@ -16,30 +15,22 @@ $font-size-small: 0.86em;
 // but just a small "patch" that's $border-size high
 $body-background: white;
 .inputGeneral {
-	.field {
-		margin: 16px;
-		width: 256px;
-	}
+	width: 90%;
+	margin: 16px;
 	& {
 		display: inline-block;
 		position: relative;
 	}
 
-	&,
-	> #{$input},
-	> #{$label} {
-		box-sizing: border-box;
-	}
-
 	// Border
 	&::before {
-		content: '';
+		content: "";
 		display: block;
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
-		bottom: 0;
+		bottom: 12px;
 		transition: border-color $speed linear;
 
 		border-bottom: solid $border-size $border-color;
@@ -118,7 +109,7 @@ $body-background: white;
 		height: auto;
 		padding: 0;
 		font-size: $font-size-small;
-		color: $text;
+		color: $text-primary;
 		// We need to have a fixed background
 		background: $body-background;
 
