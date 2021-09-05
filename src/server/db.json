@@ -24,14 +24,6 @@
 		}
 	],
 	"users": [
-		{
-			"name": "",
-			"lastName": "",
-			"agencyCode": "",
-			"email": "",
-			"typeId": 1,
-			"id": 1
-		}
 	],
 	"main": {
 		"title": "Sign Up",
