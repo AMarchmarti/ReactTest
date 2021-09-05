@@ -1,20 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import Button from '../../components/Button/Button';
-import Input from '../../components/Input/Input';
 import Link from '../../components/Link/Link';
+import { getMainData } from '../../service/main.service';
 
 const Home = () => {
 	const history = useHistory();
+	const [data, setData] = useState();
+	const fetch = async () => {
+		setData(await getMainData());
+	};
+	useEffect(() => {
+		if (data === undefined) {
+			fetch();
+		}
+	}, []);
 	return (
 		<>
-			<h3>
-				<b>Sign Up</b>
-			</h3>
-			<p>What kinf of user are you?</p>
-			<Button type="button" handleClick={() => history.push('/hotel')} label="Pulsa aqui" />
-			<Button type="button" handleClick={() => history.push('/agency')} label="Pulsa aqui2" />
-			<Link url="/" label="Are you registered" />
+			{data && (
+				<>
+					<h3>
+						<b>{data.title}</b>
+					</h3>
+					<p>{data.typeText}</p>
+					<Button
+						type="button"
+						handleClick={() => history.push(`/${data.type.hotel}`)}
+						label={data.hotelGuestButton}
+					/>
+					<Button
+						type="button"
+						handleClick={() => history.push(`/${data.type.agency}`)}
+						label={data.agencyTraveButton}
+					/>
+					<Link url="/" label={data.linkRegister} />
+				</>
+			)}
 		</>
 	);
 };

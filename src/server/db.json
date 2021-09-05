@@ -23,5 +23,16 @@
 			"placeholderEmail": "Enter your email"
 		}
 	],
-	"users": []
+	"users": [],
+	"main": {
+		"title": "Sign Up",
+		"typeText": "What kind of user are you?",
+		"hotelGuestButton": "A hotel Guest",
+		"agencyTraveButton": "A travel agency",
+		"type": {
+			"hotel": "hotel",
+			"agency": "agency"
+		},
+		"linkRegister": "Are you registered?"
+	}
 }

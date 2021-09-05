@@ -1,0 +1,135 @@
+@mixin floating-label-input(
+    // Selector
+    $input: ".input",
+    $label: ".label",
+    $height: 40px,
+    $border-size: 2px,
+    $border-color: rgba($text, 0.3),
+    // Label styl
+    $label-color: $text-primary,
+    $label-displacement: -4px,
+    // Padding for the left and right sides of the input box
+    $horizontal-padding: 0,
+    // The speed of the transition
+    $speed: 75ms,
+    $timing-function: ease-in-out,
+    // Size of the label in small mode
+    $font-size-small: 0.86em,
+    // Approximate color of the body behind the input
+    // This won't be a solid background behind the input box
+    // but just a small "patch" that's $border-size high
+    $body-background: white
+) {
+    & {
+        display: inline-block;
+        position: relative;
+    }
+
+    &,
+    > #{$input},
+    > #{$label} {
+        box-sizing: border-box;
+    }
+
+    // Border
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: border-color $speed linear;
+
+        border-bottom: solid $border-size $border-color;
+    }
+
+    // Focus ring
+    &:focus-within::before {
+        border-color: $text;
+        transition: border-color ($speed / 4) linear;
+    }
+
+    > #{$label} {
+        position: absolute;
+        top: 0;
+        left: $border-size + $horizontal-padding / 2;
+        transition: color $speed linear, background $speed $timing-function, line-height $speed $timing-function,
+            font-size $speed $timing-function;
+        background: transparent;
+        z-index: 2;
+        white-space: nowrap;
+        cursor: text;
+    }
+
+    // Input reset
+    > #{$input} {
+        margin: 0;
+        padding: 0 $horizontal-padding;
+        border: 0;
+        background: transparent;
+        min-height: $height;
+        position: relative;
+        z-index: 1;
+        transition: opacity $speed $timing-function, box-shadow $speed $timing-function;
+        width: 100%;
+    }
+
+    > input#{$input} {
+        line-height: $height;
+    }
+
+    > #{$input} {
+        &:focus {
+            outline: 0;
+        }
+
+        &:invalid {
+            // Cancel the default styling of invalid fields;
+            outline: 0;
+            box-shadow: none;
+        }
+
+        &:invalid:not(:focus) {
+            // Prevent the textbox from turning red while typing.
+            outline: 0;
+            border: 0;
+            box-shadow: inset 0 (-1 * $border-size) 0 $danger;
+        }
+
+        &:invalid:not(:focus) + #{$label} {
+            color: $danger;
+        }
+
+        &:focus + #{$label} {
+            color: $text-primary;
+        }
+
+        &:placeholder-shown:not(:focus) {
+            // Hide input when label is shown
+            opacity: 0;
+        }
+    }
+
+    // Small label ("up there")
+    > #{$label} {
+        line-height: $border-size;
+        height: auto;
+        padding: 0 ($horizontal-padding / 2);
+        font-size: $font-size-small;
+        color: $text;
+        // We need to have a fixed background
+        background: $body-background;
+
+        transform: translate3d(0, $label-displacement, 0);
+    }
+
+    // Big label ("down there")
+    > #{$input}:placeholder-shown:not(:focus) + #{$label} {
+        line-height: $height - $border-size * 2;
+        margin-top: $border-size;
+        font-size: 1em;
+        background: transparent;
+    }
+}

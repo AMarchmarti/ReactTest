@@ -1,0 +1,11 @@
+@import "./_mixins.scss";
+
+.commonField {
+    margin: 16px;
+    width: 256px;
+}
+
+.inputGeneral {
+    composes: commonField;
+    @include floating-label-input();
+}

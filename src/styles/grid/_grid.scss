@@ -1,0 +1,46 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row.no-gutter [class*="col"] {
+    padding: 0;
+}
+
+[class*="col"].no-gutter {
+    padding: 0;
+}
+
+[class*="col"] {
+    padding: ($gutter/ 2);
+}
+
+.col {
+    flex-shrink: 1;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+@include gridGenerator($breakpoint: "xs");
+
+@include sm {
+    @include gridGenerator($breakpoint: "sm");
+}
+
+@include md {
+    @include gridGenerator($breakpoint: "md");
+}
+
+@include lg {
+    @include gridGenerator($breakpoint: "lg");
+}
