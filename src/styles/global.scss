@@ -8,4 +8,7 @@ body {
 @import "./grid/variables";
 @import "./grid/mixins";
 @import "./grid/grid";
-@import "./components/input/input";
+@import "./components/input";
+@import "./components/header";
+@import "./components/iconButton";
+@import "./components/button";

@@ -25,11 +25,13 @@ const Home = () => {
 					<p>{data.typeText}</p>
 					<Button
 						type="button"
+						variant="outlined"
 						handleClick={() => history.push(`/${data.type.hotel}`)}
 						label={data.hotelGuestButton}
 					/>
 					<Button
 						type="button"
+						variant="outlined"
 						handleClick={() => history.push(`/${data.type.agency}`)}
 						label={data.agencyTraveButton}
 					/>

@@ -68,7 +68,12 @@ const Register = () => {
 										type="mail"
 										handleChange={(e) => setValue('email', e.target.value)}
 									/>
-									<Button type="submit" handleClick={() => handleClickSubmit(values)} label="Send" />
+									<Button
+										type="submit"
+										variant="contained"
+										handleClick={() => handleClickSubmit(values)}
+										label="Send"
+									/>
 								</>
 							);
 						}}

@@ -1,23 +1,25 @@
-@mixin floating-label-input(
-    // Selector
-    $input: ".input",
-    $label: ".label",
-    $height: 40px,
-    $border-size: 2px,
-    $border-color: rgba($text, 0.3),
-    // Label styl
-    $label-color: $text-primary,
-    $label-displacement: -4px,
-    // The speed of the transition
-    $speed: 75ms,
-    $timing-function: ease-in-out,
-    // Size of the label in small mode
-    $font-size-small: 0.86em,
-    // Approximate color of the body behind the input
-    // This won't be a solid background behind the input box
-    // but just a small "patch" that's $border-size high
-    $body-background: white
-) {
+$input: ".input";
+$label: ".label";
+$height: 40px;
+$border-size: 2px;
+$border-color: rgba($text, 0.3);
+// Label styl
+$label-color: $text-primary;
+$label-displacement: -4px;
+// The speed of the transition
+$speed: 75ms;
+$timing-function: ease-in-out;
+// Size of the label in small mode
+$font-size-small: 0.86em;
+// Approximate color of the body behind the input
+// This won't be a solid background behind the input box
+// but just a small "patch" that's $border-size high
+$body-background: white;
+.inputGeneral {
+    .field {
+        margin: 16px;
+        width: 256px;
+    }
     & {
         display: inline-block;
         position: relative;

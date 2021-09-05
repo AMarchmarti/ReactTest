@@ -2,8 +2,8 @@ import React from 'react';
 
 const IconButton = ({ type, handleClick, icon, disabled }) => {
 	return (
-		<button type={type} onClick={handleClick} disabled={disabled}>
-			<i className={icon}></i>
+		<button className="container__icon__button" type={type} onClick={handleClick} disabled={disabled}>
+			{icon}
 		</button>
 	);
 };
