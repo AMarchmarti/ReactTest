@@ -1,13 +1,13 @@
 import React from 'react';
 import { useHistory } from 'react-router';
-import Button from '../Button/Button';
+import IconButton from '../IconButton/IconButton';
 
 const Header = () => {
 	const history = useHistory();
 	return (
 		<div>
-			<Button handleClick={() => history.goBack()} icon="bi bi-arrow-left" />
-			<Button handleClick={() => history.push('/')} icon="bi bi-x" />
+			<IconButton handleClick={() => history.goBack()} icon="bi bi-arrow-left" />
+			<IconButton handleClick={() => history.push('/')} icon="bi bi-x" />
 		</div>
 	);
 };

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Button = ({ type, handleClick, label, disabled }) => {
+const IconButton = ({ type, handleClick, icon, disabled }) => {
 	return (
 		<button type={type} onClick={handleClick} disabled={disabled}>
-			{label}
+			<i className={icon}></i>
 		</button>
 	);
 };
 
-export default Button;
+export default IconButton;
