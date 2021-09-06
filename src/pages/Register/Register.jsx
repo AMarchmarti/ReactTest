@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import Grid from '../../components/Grid/Grid';
@@ -22,16 +22,23 @@ const basicFormAgency = {
 	email: '',
 };
 
+const PATTERN = /^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i;
+
 const Register = () => {
 	const params = useParams();
 	const history = useHistory();
 	const type = useGet(getTypeUsers, TYPEUSER[params.typeUser]);
+	const [error, setError] = useState();
 
 	const handleChange = (e, setValue, field) => {
+		const { value } = e.target;
+		if (field === 'email') {
+			setError(!value.match(PATTERN));
+		}
 		setValue(field, e.target.value);
 	};
 
-	const isDisabled = (values) => Object.keys(values).find((value) => !values[value]);
+	const isDisabled = (values) => !Object.keys(values).find((value) => !values[value]) && !error;
 
 	const handleClickSubmit = async (user) => {
 		try {
@@ -56,7 +63,7 @@ const Register = () => {
 											placeholder={type.placeholderName}
 											label={type.labelName}
 											type="text"
-											handleChange={(e) => handleBlur(e, setValue, 'name')}
+											handleChange={(e) => handleChange(e, setValue, 'name')}
 										/>
 
 										<Input
@@ -77,8 +84,8 @@ const Register = () => {
 										<Grid className="margin__md__top"></Grid>
 										<Button
 											type="submit"
-											variant={isDisabled(values) ? 'disabled' : 'contained'}
-											disabled={isDisabled(values)}
+											variant={!isDisabled(values) ? 'disabled' : 'contained'}
+											disabled={!isDisabled(values)}
 											handleClick={() => handleClickSubmit(values)}
 											label="Send"
 										/>
