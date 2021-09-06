@@ -11,9 +11,13 @@ import { addUser } from '../../service/user.service';
 import { TYPEUSER } from '../../utils/TypeUsers';
 import useGet from '../../hooks/useGet';
 
-const basicForm = {
+const basicFormHotel = {
 	name: '',
 	lastName: '',
+	email: '',
+};
+const basicFormAgency = {
+	name: '',
 	agencyCode: '',
 	email: '',
 };
@@ -23,10 +27,11 @@ const Register = () => {
 	const history = useHistory();
 	const type = useGet(getTypeUsers, TYPEUSER[params.typeUser]);
 
-	const isDisabled = (values) => {
-		const prueba = Object.keys(values).some((key) => !!values[key]);
-		console.log('prueba :>> ', prueba);
+	const handleChange = (e, setValue, field) => {
+		setValue(field, e.target.value);
 	};
+
+	const isDisabled = (values) => Object.keys(values).find((value) => !values[value]);
 
 	const handleClickSubmit = async (user) => {
 		try {
@@ -43,24 +48,23 @@ const Register = () => {
 					<Header />
 					<Grid size="lg" number={12} direction="column" className="container">
 						<Title title={type.name} />
-						<Form initialValues={basicForm}>
+						<Form initialValues={type.id === 2 ? basicFormAgency : basicFormHotel}>
 							{({ values, setValue }) => {
-								console.log('isDisabled :>> ', isDisabled(values));
 								return (
 									<>
 										<Input
 											placeholder={type.placeholderName}
 											label={type.labelName}
 											type="text"
-											handleBlur={(e) => setValue('name', e.target.value)}
+											handleChange={(e) => handleBlur(e, setValue, 'name')}
 										/>
 
 										<Input
 											placeholder={type.placeholderLastName}
 											label={type.labelLastName}
 											type={type.id === 2 ? 'number' : 'text'}
-											handleBlur={(e) =>
-												setValue(type.id === 2 ? 'agencyCode' : 'lastName', e.target.value)
+											handleChange={(e) =>
+												handleChange(e, setValue, type.id === 2 ? 'agencyCode' : 'lastName')
 											}
 										/>
 
@@ -68,13 +72,13 @@ const Register = () => {
 											placeholder={type.placeholderEmail}
 											label={type.labelEmail}
 											type="mail"
-											handleBlur={(e) => setValue('email', e.target.value)}
+											handleChange={(e) => handleChange(e, setValue, 'email')}
 										/>
 										<Grid className="margin__md__top"></Grid>
 										<Button
 											type="submit"
-											variant={!isDisabled(values) ? 'disabled' : 'contained'}
-											disabled={!isDisabled(values)}
+											variant={isDisabled(values) ? 'disabled' : 'contained'}
+											disabled={isDisabled(values)}
 											handleClick={() => handleClickSubmit(values)}
 											label="Send"
 										/>
