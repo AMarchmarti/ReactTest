@@ -1,6 +1,6 @@
-# ReactTestRoiback
+# ReactTest
 
-Technical test for Roiback
+Technical test
 
 ## LAUNCHER
 
